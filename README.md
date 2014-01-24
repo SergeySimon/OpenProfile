@@ -1,7 +1,7 @@
 OpenProfile
 ===========
 
-This is the stable branch, the application should be stable.
+This is the stable branch, the application should be stable. This is the Lite build of OpenProfile, which includes no GUI.
 
 
 [![Build Status](https://travis-ci.org/deavmi/OpenProfile.png?branch=master)](https://travis-ci.org/deavmi/OpenProfile)
