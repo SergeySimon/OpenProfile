@@ -1,18 +1,11 @@
 'OpenProfile is a free and open-source easy to use autobiography and biography creator written in Python. Copyright (C) 2014 DeavmiOSS'
-'Doing the imports'
-import tkinter
+'OpenProfile Lite version'
 'Below we start setting up strings'
 app_name = "OpenProfile"
 app_name_short = "OP"
 app_version_number = "1.3.0.0"
 app_version_stableness = "pre-beta"
 app_version_complete = app_version_number + " " + app_version_stableness
-'Some GUI stuff'
-app_gui_window_main_title = app_name + " v" + app_version_number + " (gui)"
-app_gui_window_about_title = "About " + app_name
-app_gui_window_main_size = "300x300"
-app_gui_window_about_size = "300x250"
-'End of GUI stuff'
 app_orginization = "DeavmiOSS"
 app_orginization_message = "This is free and open-source software from " + app_orginization + "."
 app_description = app_name + " is a free and open-source easy to use autobiography and biography creator written in Python."
@@ -116,11 +109,9 @@ def help():
     print("Here are a list of commands that can be used in " + app_name_short + ".")
     print()
     print("about         Displays about info")
-    print("about_gui     Displays about info in GUI mode")
     print("changelog     Displays info on how to get the changelog")
     print("credits       Displays credits")
     print("exit          Terminates the program")
-    print("gui           Starts OpenProfile in GUI mode")
     print("help          Displays list of commands")
     print("license       Displays the " + app_name + " license")
     print("licenses      Displays all licenses")
@@ -192,58 +183,7 @@ def begin():
     if str == "1":
        finish_autobiography()
     if str == "2":
-       finish_biography() 
-def about_gui():
-    print()
-    print("Setting up the GUI...")
-    print("Setting window name...")
-    about = tkinter.Tk()
-    print("Setting window names... [Done]")
-    print("Setting window properties...")
-    print("Setting window size...")
-    about.geometry(app_gui_window_about_size)
-    print("Setting window title...")
-    about.title(app_gui_window_about_title)
-    print("Setting window title... [Done]")
-    print("Setting window properties... [Done]")
-    print("Setting up the GUI... [Done]")
-    print("Creating the window...")
-    about.mainloop()
-    print("Creating the window... [Done - Loop ended]")
-    print()
-    commandline()
-    'This above module is not correct I think yet, IDK how I want it be.'
-def gui():
-    print()
-    print("Setting up the GUI...")
-    print("Setting window name...")
-    main = tkinter.Tk()
-    print("Setting window names... [Done]")
-    print("Setting window properties...")
-    print("Setting window size...")
-    main.geometry(app_gui_window_main_size)
-    print("Setting window title...")
-    main.title(app_gui_window_main_title)
-    print("Setting window title... [Done]")
-    print("Setting window properties... [Done]")
-    print("Setting up widgets...")
-    'must finish this stuff here'
-    label1_app_name = tkinter.Label(text=app_name)
-    label2_app_version = tkinter.Label(text=app_version_complete)
-    
-    print("Setting up widgets... [Done]")
-    print("Packing the widgets...")
-    'image must be created and then packed here
-    label1_app_name.pack()
-    label2_app_version.pack()
-    print("Packing the widgets... [Done]")
-    print("Setting up the GUI... [Done]")
-    print("Creating the window...")
-    main.mainloop()
-    print("Creating the window... [Done - Loop ended]")
-    print()
-    commandline()
-    'This above module is not correct I think yet, IDK how I want it be.'
+       finish_biography()
 def commandline():
     str = input(">>>")
     if str == "start":
@@ -257,8 +197,6 @@ def commandline():
         exit()
     if str == "about":
         about()
-    if str == "about_gui":
-        about_gui()
     if str == "credits":
         credits()
     if str == "show w":
@@ -271,8 +209,6 @@ def commandline():
         licenses()
     if str == "restart":
         app_start()
-    if str == "gui":
-        gui()
     if str == "":
         commandline()
 def app_start():
