@@ -1,4 +1,4 @@
-OpenProfile [lite]
+OpenProfile [Lite]
 ===========
 
 This is the stable branch, the application should be stable. This is the Lite build of OpenProfile, which includes no GUI.
