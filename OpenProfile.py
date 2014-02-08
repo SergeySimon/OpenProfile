@@ -1,41 +1,62 @@
 'OpenProfile is a free and open-source easy to use autobiography and biography creator written in Python. Copyright (C) 2014 DeavmiOSS'
 'Below we start setting up strings'
+print("Please wait, the application is starting...")
+print("Setting application strings...")
 app_name = "OpenProfile"
 app_name_short = "OP"
-app_version_number = "1.4.0.0"
+app_version_number = "1.4.0.6"
 app_version_stableness = "pre-beta"
 app_version_complete = app_version_number + " " + app_version_stableness
+print("Setting application strings... [Done]")
 '######### Some stuff that makes everthing work awesomely #########'
 'change this for different builds of OpenProfile'
 '######'
+print(app_name + " build system is running...")
+print(app_name + " build type is being set...")
 app_environment_build_type = "OpenProfile-for-iOS"
+print(app_name + " build type set to: " + app_environment_build_type)
 '######'
-
+print("Checking for the selected build type's enviroment...")
 '###### OpenProfile ######'
 if app_environment_build_type == "OpenProfile":
+    print("Checking for the selected build type's enviroment... [Done]")
+    print("Setting up the environemnt for the selected build type...")
     app_environment_build_machine_type = "[Windows/Mac OSX/GNU-Linux]"
     app_environment_gui_enabled = "true"
+    print("Setting up the environemnt for the selected build type... [Done]")
 '#################################'
 
 '###### OpenProfile-lite ######'
 if app_environment_build_type == "OpenProfile-lite":
+    print("Checking for the selected build type's enviroment... [Done]")
+    print("Setting up the environemnt for the selected build type...")
     app_environment_build_machine_type = "[Windows/Mac OSX/GNU-Linux (lite)]"
     app_environment_gui_enabled = "false"
+    print("Setting up the environemnt for the selected build type... [Done]")
 '#################################'
 
 '###### OpenProfile-for-iOS ######'
 if app_environment_build_type == "OpenProfile-for-iOS":
+    print("Checking for the selected build type's enviroment... [Done]")
+    print("Setting up the environemnt for the selected build type...")
     app_environment_build_machine_type = "[iOS]"
     app_environment_gui_enabled = "false"
+    print("Setting up the environemnt for the selected build type... [Done]")
 '#################################'
 
 'End of awesome stuff'
 'Next stage of awesome stuff'
+print("Checking if the GUI needs to be enabled...")
 if app_environment_gui_enabled == "true":
     'Imports the "tkinter" library"'
+    print("Checking if the GUI needs to be enabled... Yes")
+    print("Importing GUI library...")
     import tkinter
+    print("Importing GUI library... [Done]")
+print(app_name + " build system is running... [Done]")    
 '######### End of next stage awesome stuff #########'    
 'Some GUI stuff'
+print("Continueing setting application strings...")
 app_gui_window_main_title = app_name + " v" + app_version_number + " (gui)"
 app_gui_window_about_title = "About " + app_name
 app_gui_window_main_size = "300x300"
@@ -61,6 +82,7 @@ app_info_online_repository_url = "https://github.com/deavmi/OpenProfile"
 app_info_online_feedback_url = "https//deavmi.github.io/OpenProfile/feedback"
 app_info_online_wiki_url = "https://github.com/deavmi/OpenProfile/wiki"
 app_ui_console_welcomemsg = "Welcome to " + app_name + "!"
+print("Continueing setting application strings... [Done]")
 'Getting everything referenced so that we can, "refer"-lol, to them when we need to a.k.a go to them-(the definitions)'
 def exit():
     print()
@@ -106,11 +128,11 @@ def credits():
     print()
     print("Currently we do not have any testers, unless Travis-CI counts.")
     print()
-    print("\\\ These sites helped")
+    print("\\\These sites helped")
     print()
     print("QuestionFor - <http://python.questionfor.info/q_python_60818.html>")
     print()
-    print("\\\Special Thanks")
+    print("\\\Special thanks")
     print()
     print("GitHub - Thanks for your great hosting both repo and site. <http://github.com>")
     print("Travis-CI - Excellent build slaves continuously testing the code. <http://travis-ci.org>")
@@ -140,15 +162,21 @@ def changelog():
     'Must still put stuff here'
     print()
 def help():
+    if app_environment_gui_enabled == "true":
+        app_strings_about_gui_help_string = "about_gui     Displays about info in GUI mode"
+        app_strings_gui_help_string = "gui           Starts OpenProfile in GUI mode"
+    if app_environment_gui_enabled == "false":
+        app_strings_about_gui_help_string = "about_gui     Displays about info in GUI mode (Not available in this build type)"
+        app_strings_gui_help_string = "gui           Starts OpenProfile in GUI mode (Not available in this build type)"
     print()
     print("Here are a list of commands that can be used in " + app_name_short + ".")
     print()
     print("about         Displays about info")
-    print("about_gui     Displays about info in GUI mode")
+    print(app_strings_about_gui_help_string)
     print("changelog     Displays info on how to get the changelog")
     print("credits       Displays credits")
     print("exit          Terminates the program")
-    print("gui           Starts OpenProfile in GUI mode")
+    print(app_strings_gui_help_string)
     print("help          Displays list of commands")
     print("license       Displays the " + app_name + " license")
     print("licenses      Displays all licenses")
@@ -217,6 +245,8 @@ def begin():
     print()
     print("1. Autobiography")
     print("2. Biography")
+    print()
+    str = input(">>>")
     if str == "1":
        finish_autobiography()
     if str == "2":
