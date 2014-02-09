@@ -3,7 +3,7 @@ OpenProfile [For iOS]
 
 This is the stable branch, the application should be stable. this branch is an OpenProfile build created to run on a jailbroken iDevice inside of Mobile Terminal or any other terminal emulating application.
 
-**Please note:** Doesn't run the _start_ procedure, currently in broken state.
+**Please note:** Doesn't run the _start_ procedure. _OpenProfile-for-iOS_ is currently in a broken state.
 
 
 [![Build Status](https://travis-ci.org/deavmi/OpenProfile.png?branch=master)](https://travis-ci.org/deavmi/OpenProfile)
