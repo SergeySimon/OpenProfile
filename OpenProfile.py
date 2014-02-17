@@ -1,19 +1,23 @@
-"""OpenProfile is a free and open-source easy to use autobiography and biography creator written in Python. Copyright (C) 2014 DeavmiOSS
-'Below we start setting up strings"""
-print("""Please wait, the application is starting...
-Setting application strings...""")
+"""OpenProfile is a free and open-source easy to use autobiography
+and biography creator written in Python. Copyright (C) 2014 DeavmiOSS
+Below we start setting up strings"""
+import sys
+
 app_name = "OpenProfile"
 app_name_short = "OP"
 app_version_number = "1.4.1.2"
 app_version_stableness = "pre-beta"
 app_version_complete = app_version_number + " " + app_version_stableness
+app_environment_build_type = "OpenProfile"
+app_environment_gui_enabled = False
+
+print("Please wait, the application is starting...\n Setting application strings...")
 print("Setting application strings... [Done]")
 ######### Some stuff that makes everthing work awesomely #########
 # change this for different builds of OpenProfile
 ######
 print(app_name + " build system is running...")
 print(app_name + " build type is being set...")
-app_environment_build_type = "OpenProfile"
 print(app_name + " build type set to: " + app_environment_build_type)
 ######
 print("Checking for the selected build type's enviroment...")
@@ -22,32 +26,33 @@ if app_environment_build_type == "OpenProfile":
     print("Checking for the selected build type's enviroment... [Done]")
     print("Setting up the environemnt for the selected build type...")
     app_environment_build_machine_type = "[Windows/Mac OSX/GNU-Linux]"
-    app_environment_gui_enabled = "true"
+    app_environment_gui_enabled = True
     print("Setting up the environemnt for the selected build type... [Done]")
 #################################
 
 ###### OpenProfile-lite ######
-if app_environment_build_type == "OpenProfile-lite":
+elif app_environment_build_type == "OpenProfile-lite":
     print("Checking for the selected build type's enviroment... [Done]")
     print("Setting up the environemnt for the selected build type...")
     app_environment_build_machine_type = "[Windows/Mac OSX/GNU-Linux (lite)]"
-    app_environment_gui_enabled = "false"
+    app_environment_gui_enabled = False
     print("Setting up the environemnt for the selected build type... [Done]")
 #################################
 
 ###### OpenProfile-for-iOS ######
-if app_environment_build_type == "OpenProfile-for-iOS":
+elif app_environment_build_type == "OpenProfile-for-iOS":
     print("Checking for the selected build type's enviroment... [Done]")
     print("Setting up the environemnt for the selected build type...")
     app_environment_build_machine_type = "[iOS]"
-    app_environment_gui_enabled = "false"
+    app_environment_gui_enabled = False
     print("Setting up the environemnt for the selected build type... [Done]")
+
 # #################################
 #
 # End of awesome stuff
 # Next stage of awesome stuff
 print("Checking if the GUI needs to be enabled...")
-if app_environment_gui_enabled == "true":
+if app_environment_gui_enabled:
     # Imports the "tkinter" library
     print("Checking if the GUI needs to be enabled... Yes")
     print("Importing GUI library...")
@@ -61,7 +66,7 @@ app_gui_window_main_title = app_name + " v" + app_version_number + " (gui)"
 app_gui_window_about_title = "About " + app_name
 app_gui_window_main_size = "300x300"
 app_gui_window_about_size = "300x250"
-'End of GUI stuff'
+# End of GUI stuff
 app_orginization = "DeavmiOSS"
 app_orginization_message = "This is free and open-source software from " + app_orginization + "."
 app_description = app_name + " is a free and open-source easy to use autobiography and biography creator written in Python."
@@ -89,7 +94,7 @@ print("Continueing setting application strings... [Done]")
 def exit():
     print()
     print("Thank you for using " + app_name + ".")
-    exit
+    sys.exit()
 
 
 def about():
@@ -121,7 +126,8 @@ def credits():
     print("Credits of " + app_name + " v" + app_version_number + " .")
     print()
     print()
-    # I wanted three back slahes but apprently you always have to add +1 to the amount of slahes any way two slahes is enough
+    # I wanted three back slahes but apprently you always have to
+    # add +1 to the amount of slahes any way two slahes is enough
     print("\\\Developers")
     print()
     print("Deavmi - <http://bit.ly/thedeavmi>")
@@ -177,7 +183,7 @@ def changelog():
 
 
 def help():
-    if app_environment_gui_enabled == "true":
+    if app_environment_gui_enabled:
         app_strings_about_gui_help_string = "about_gui     Displays about info in GUI mode"
         app_strings_gui_help_string = "gui           Starts OpenProfile in GUI mode"
     else:
