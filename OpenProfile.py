@@ -1,61 +1,61 @@
-'OpenProfile is a free and open-source easy to use autobiography and biography creator written in Python. Copyright (C) 2014 DeavmiOSS'
-'Below we start setting up strings'
-print("Please wait, the application is starting...")
-print("Setting application strings...")
+"""OpenProfile is a free and open-source easy to use autobiography and biography creator written in Python. Copyright (C) 2014 DeavmiOSS
+'Below we start setting up strings"""
+print("""Please wait, the application is starting...
+Setting application strings...""")
 app_name = "OpenProfile"
 app_name_short = "OP"
 app_version_number = "1.4.1.2"
 app_version_stableness = "pre-beta"
 app_version_complete = app_version_number + " " + app_version_stableness
 print("Setting application strings... [Done]")
-'######### Some stuff that makes everthing work awesomely #########'
-'change this for different builds of OpenProfile'
-'######'
+######### Some stuff that makes everthing work awesomely #########
+# change this for different builds of OpenProfile
+######
 print(app_name + " build system is running...")
 print(app_name + " build type is being set...")
 app_environment_build_type = "OpenProfile"
 print(app_name + " build type set to: " + app_environment_build_type)
-'######'
+######
 print("Checking for the selected build type's enviroment...")
-'###### OpenProfile ######'
+###### OpenProfile ######
 if app_environment_build_type == "OpenProfile":
     print("Checking for the selected build type's enviroment... [Done]")
     print("Setting up the environemnt for the selected build type...")
     app_environment_build_machine_type = "[Windows/Mac OSX/GNU-Linux]"
     app_environment_gui_enabled = "true"
     print("Setting up the environemnt for the selected build type... [Done]")
-'#################################'
+#################################
 
-'###### OpenProfile-lite ######'
+###### OpenProfile-lite ######
 if app_environment_build_type == "OpenProfile-lite":
     print("Checking for the selected build type's enviroment... [Done]")
     print("Setting up the environemnt for the selected build type...")
     app_environment_build_machine_type = "[Windows/Mac OSX/GNU-Linux (lite)]"
     app_environment_gui_enabled = "false"
     print("Setting up the environemnt for the selected build type... [Done]")
-'#################################'
+#################################
 
-'###### OpenProfile-for-iOS ######'
+###### OpenProfile-for-iOS ######
 if app_environment_build_type == "OpenProfile-for-iOS":
     print("Checking for the selected build type's enviroment... [Done]")
     print("Setting up the environemnt for the selected build type...")
     app_environment_build_machine_type = "[iOS]"
     app_environment_gui_enabled = "false"
     print("Setting up the environemnt for the selected build type... [Done]")
-'#################################'
-
-'End of awesome stuff'
-'Next stage of awesome stuff'
+# #################################
+#
+# End of awesome stuff
+# Next stage of awesome stuff
 print("Checking if the GUI needs to be enabled...")
 if app_environment_gui_enabled == "true":
-    'Imports the "tkinter" library"'
+    # Imports the "tkinter" library
     print("Checking if the GUI needs to be enabled... Yes")
     print("Importing GUI library...")
     import tkinter
     print("Importing GUI library... [Done]")
-print(app_name + " build system is running... [Done]")    
-'######### End of next stage awesome stuff #########'    
-'Some GUI stuff'
+print(app_name + " build system is running... [Done]")
+######### End of next stage awesome stuff #########
+# Some GUI stuff
 print("Continueing setting application strings...")
 app_gui_window_main_title = app_name + " v" + app_version_number + " (gui)"
 app_gui_window_about_title = "About " + app_name
@@ -83,11 +83,15 @@ app_info_online_feedback_url = "https//deavmi.github.io/OpenProfile/feedback"
 app_info_online_wiki_url = "https://github.com/deavmi/OpenProfile/wiki"
 app_ui_console_welcomemsg = "Welcome to " + app_name + "!"
 print("Continueing setting application strings... [Done]")
-'Getting everything referenced so that we can, "refer"-lol, to them when we need to a.k.a go to them-(the definitions)'
+# Getting everything referenced so that we can, "refer"-lol, to them when we need to a.k.a go to them-(the definitions)
+
+
 def exit():
     print()
     print("Thank you for using " + app_name + ".")
     exit
+
+
 def about():
     print()
     print("-------------------------------------------------------")
@@ -110,12 +114,14 @@ def about():
     print("Feedback: " + app_info_online_feedback_url)
     print()
     commandline()
+
+
 def credits():
     print()
     print("Credits of " + app_name + " v" + app_version_number + " .")
     print()
     print()
-    'I wanted three back slahes but apprently you always have to add +1 to the amount of slahes any way two slahes is enough'
+    # I wanted three back slahes but apprently you always have to add +1 to the amount of slahes any way two slahes is enough
     print("\\\Developers")
     print()
     print("Deavmi - <http://bit.ly/thedeavmi>")
@@ -142,6 +148,8 @@ def credits():
     print("All the people credited in the 'I-wantz-doges' project, you guys helped a lot <http://bit.ly/I-wantz-doges>")
     print()
     commandline()
+
+
 def license():
     print()
     print(app_license_description)
@@ -161,14 +169,18 @@ def licenses():
     print("20 Flat Icons - <http://www.graphicsfuel.com> (Free for commercial use)")
     print()
     commandline()
+
+
 def changelog():
-    'Must still put stuff here'
+    """Must still put stuff here"""
     print()
+
+
 def help():
     if app_environment_gui_enabled == "true":
         app_strings_about_gui_help_string = "about_gui     Displays about info in GUI mode"
         app_strings_gui_help_string = "gui           Starts OpenProfile in GUI mode"
-    if app_environment_gui_enabled == "false":
+    else:
         app_strings_about_gui_help_string = "about_gui     Displays about info in GUI mode (Not available in this build type)"
         app_strings_gui_help_string = "gui           Starts OpenProfile in GUI mode (Not available in this build type)"
     print()
@@ -190,89 +202,79 @@ def help():
     print("start         Starts OpenProfile opperation")
     print()
     commandline()
+
+
 def begin():
     print()
     print("Please fill in the following, hit enter to confirm:")
     print()
     print("--- Personal details ---")
     print()
-    str = input("Enter your first name: ")
-    user_names_firstname = str
-    str = input("Enter your middle name: ")
-    user_names_middlename = str
-    str = input("Enter your last name: ")
-    user_names_lastname = str
-    str = input("Enter your maiden name: ")
-    user_names_maidenname = str    
-    str = input("Enter your nickname: ")
-    user_names_nickname = str
-    str = input("Enter your age: ")
-    user_time_age = str
-    str = input("Enter the day of your birth (No. format): ")
-    user_time_dateofbirth_day = str
-    str = input("Enter the month of your birth (ABC format): ")
-    user_time_dateofbirth_month = str
-    str = input("Enter the year of your birth (No. format): ")
-    user_time_dateofbirth_year = str
+    val = input("Enter your first name: ")
+    user_names_firstname = val
+    val = input("Enter your middle name: ")
+    user_names_middlename = val
+    val = input("Enter your last name: ")
+    user_names_lastname = val
+    val = input("Enter your maiden name: ")
+    user_names_maidenname = val
+    val = input("Enter your nickname: ")
+    user_names_nickname = val
+    val = input("Enter your age: ")
+    user_time_age = val
+    val = input("Enter the day of your birth (No. format): ")
+    user_time_dateofbirth_day = val
+    val = input("Enter the month of your birth (ABC format): ")
+    user_time_dateofbirth_month = val
+    val = input("Enter the year of your birth (No. format): ")
+    user_time_dateofbirth_year = val
     print()
     print("--- Location details ---")
     print()
-    str = input("Enter city of birth: ")
-    user_location_cityofbirth = str
-    str = input("Enter country of birth: ")
-    user_location_countryofbirth = str
-    str = input("Enter current postal code: ")
-    user_location_cityofbirth = str
-    str = input("Enter current city: ")
-    user_location_city = str
-    str = input("Enter current state/province: ")
-    user_location_state = str
-    str = input("Enter current country: ")
-    user_location_country = str
+    val = input("Enter city of birth: ")
+    user_location_cityofbirth = val
+    val = input("Enter country of birth: ")
+    user_location_countryofbirth = val
+    val = input("Enter current postal code: ")
+    user_location_cityofbirth = val
+    val = input("Enter current city: ")
+    user_location_city = val
+    val = input("Enter current state/province: ")
+    user_location_state = val
+    val = input("Enter current country: ")
+    user_location_country = val
     print()
     print("--- Work ---")
-    str = input("What is your current job: ")
-    user_work_currentjob = str
-    str = input("List your previous jobs (Comma format): ")
-    user_work_previousjobs_list = str
+    val = input("What is your current job: ")
+    user_work_currentjob = val
+    val = input("List your previous jobs (Comma format): ")
+    user_work_previousjobs_list = val
     print("--- Interests & hobbies ---")
     print()
-    str = input("List your interests (Comma format): ")
-    user_interests_list = str
+    val = input("List your interests (Comma format): ")
+    user_interests_list = val
     print()
     print("Just completing some cool things...")
-    'If the person is below the age of 13, he is considered a kid/child (thanks mom ;P)'
+    # If the person is below the age of 13, he is considered a kid/child (thanks mom ;P)
     if user_time_age < "13":
-        user_time_age_type  = "kid"
-    'For all the ages below consider the person a teenager (thanks mom ;P, again)'
-    if user_time_age == "13":
-        user_time_age_type = "teenager"
-    if user_time_age == "14":
-        user_time_age_type = "teenager"
-    if user_time_age == "15":
-        user_time_age_type = "teenager"
-    if user_time_age == "16":
-        user_time_age_type = "teenager"
-    if user_time_age == "17":
-        user_time_age_type = "teenager"
-    if user_time_age == "18":
-        user_time_age_type = "teenager"
-    if user_time_age == "19":
-        user_time_age_type = "teenager"
-    'For all the ages above 19, the person is considered an adult (thanks mom, ;P, lol, again) P.S I know, grandparents/people are not included'
-    if user_time_age > "19":
+        user_time_age_type = "kid"
+    elif user_time_age > "19":
         user_time_age_type = "adult"
-    'Not finished with all the Inputs and Outputs yet hay :P :D'
+    else:
+        user_time_age_type = "teenager"
+    # Not finished with all the Inputs and Outputs yet hay :P :D
     print()
     print("Below is your autobiography that " + app_name + " just generated:")
     print()
-    'Put stuff here'
+    # Put stuff here
     print()
     print("-------------------------------------------------------")
     print()
     print("Below is your autobiography that " + app_name + " just generated:")
     print()
-    'Put stuff here'
+    # Put stuff here
+
+
 def about_gui():
     print()
     print("Setting up the GUI...")
@@ -292,7 +294,9 @@ def about_gui():
     print("Creating the window... [Done - Loop ended]")
     print()
     commandline()
-    'This above module is not correct I think yet, IDK how I want it be.'
+    # This above module is not correct I think yet, IDK how I want it be.
+
+
 def gui():
     print()
     print("Setting up the GUI...")
@@ -307,13 +311,13 @@ def gui():
     print("Setting window title... [Done]")
     print("Setting window properties... [Done]")
     print("Setting up widgets...")
-    'must finish this stuff here'
+    # TODO must finish this stuff here
     label1_app_name = tkinter.Label(text=app_name)
     label2_app_version = tkinter.Label(text=app_version_complete)
-    
+
     print("Setting up widgets... [Done]")
     print("Packing the widgets...")
-    'image must be created and then packed here'
+    # image must be created and then packed here
     label1_app_name.pack()
     label2_app_version.pack()
     print("Packing the widgets... [Done]")
@@ -323,17 +327,17 @@ def gui():
     print("Creating the window... [Done - Loop ended]")
     print()
     commandline()
-    'This above module is not correct I think yet, IDK how I want it be.'
+    # This above module is not correct I think yet, IDK how I want it be.
+
+
 def commandline():
     str = input(">>>")
     if str == "start":
-        'Jump to the "begin" definition'
+        # Jump to the "begin" definition
         begin()
     if str == "help":
         help()
-    if str == "exit":
-        exit()
-    if str == "q":
+    if str in ["exit", "q"]:
         exit()
     if str == "about":
         about()
@@ -341,20 +345,16 @@ def commandline():
         about_gui()
     if str == "credits":
         credits()
-    if str == "show w":
+    if str in ["show w", "show c", "license", "licenses"]:
         license()
-    if str == "show c":
-        license()
-    if str == "license":
-        license()
-    if str == "licenses":
-        licenses()
     if str == "restart":
         app_start()
     if str == "gui":
         gui()
     if str == "":
         commandline()
+
+
 def app_start():
     print("-------------------------------------------------------")
     print(app_name + " v" + app_version_complete + " " + app_environment_build_machine_type)
@@ -369,5 +369,8 @@ def app_start():
     print("Type 'start' to begin or 'help' for a list of commands.")
     print()
     commandline()
-'This is continueing from "setting up strings" code, we are now going to jump into the definition called "app_start"'
+
+
+# This is continueing from "setting up strings" code, we are now going to jump into the definition
+# called "app_start"
 app_start()
